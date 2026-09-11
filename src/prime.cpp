@@ -2,7 +2,9 @@
 #include <cmath>
 
 bool is_prime_half(int n, int* n_modops){
-    *n_modops = 0;
+    if(n_modops != nullptr){
+        *n_modops = 0;
+    }
 
     if(n <= 1){
         return false;
@@ -26,8 +28,10 @@ bool is_prime_half(int n, int* n_modops){
 }
 
 bool is_prime_sqrt(int n, int* n_modops){
-    *n_modops = 0;
-
+    if(n_modops != nullptr){
+        *n_modops = 0;
+    }
+    
     if(n <= 1){
         return false;
     }else if(n == 2){
