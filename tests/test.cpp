@@ -71,19 +71,18 @@ TEST_CASE("Correct odd-divisor loop up to sqrt(n)", "[is_prime_sqrt]") {
 
 
 TEST_CASE("Correct behavior when n_modpos == nullptr half", "[is_prime_half]") {
-    int modpos = 0;
-    int* p_modpos = &modpos;
+    int* p_modpos = nullptr;
 
     REQUIRE(is_prime_half(17, p_modpos) == true);
-    REQUIRE(*p_modpos == 4);
+    REQUIRE(p_modpos == nullptr);
 }
 
 TEST_CASE("Correct behavior when n_modpos == nullptr sqrt", "[is_prime_sqrt]") {
-    int modpos = 0;
-    int* p_modpos = &modpos;
+    int* p_modpos = nullptr;
+
 
     REQUIRE(is_prime_sqrt(17, p_modpos) == true);
-    REQUIRE(*p_modpos == 2);
+    REQUIRE(p_modpos == nullptr);
 }
 
 TEST_CASE("count_modpos_half(lo,hi)", "count_modpos_half"){
